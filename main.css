@@ -3,11 +3,13 @@
     src: url(fonts/Yekan.woff);
     font-weight: 400;
 }
+
 @font-face {
     font-family: Yekan;
     src: url(fonts/Yekan.woff);
     font-weight: 700;
 }
+
 @font-face {
     font-family: Yekan;
     src: url(fonts/Yekan.woff);
@@ -15,23 +17,24 @@
 }
 
 * {
-font-family: Yekan;
+    font-family: Yekan;
     margin: 0;
     padding: 0;
 }
 
 .container {
-
+background-color: #F5F5F5 ;
     width: 100%;
 
 }
+
 .container-ul {
     display: flex;
     flex-direction: row;
     list-style: none;
-    background: url(src/APIC.png)no-repeat left #F5F5F5;
-    background-size: 10%;
-    
+    background: url(src/APIC.png)no-repeat left;
+    background-size: 20vh;
+margin-left: 10px;
 }
 
 li {
@@ -39,31 +42,17 @@ li {
 }
 
 .container-card {
-    background: url(src/WorkSamples.png)no-repeat right bottom #D9D9D9;
-    width: 80%;
-    height: 450px;
+
+    width: 80vh;
+    height: 600px;
     margin: 0 auto;
-    padding: 50px;
     position: relative;
     top: 40px;
     border-radius: 14px;
-
+    background-color: #F5F5F5;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.container-card p {
-    width: 50%;
-    color: #000;
-    text-align: center;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 50px;
-    position: relative;
-    right: 50%;
-    top: 20%;
-
-}
 
 .card-Work-ul {
     width: 75%;
@@ -78,38 +67,41 @@ li {
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.card-Work-ul li{
+
+.card-Work-ul li {
     color: #6F6F6F;
-font-family: Yekan;
-font-size: 18px;
-font-weight: 700;
-line-height: normal;
-text-align: center;
-width: 75%;
-text-decoration:none;
+    font-family: Yekan;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
 
 }
-.card-Work-ul li:hover{
+
+.card-Work-ul>li:hover {
     cursor: pointer;
-    background:#1977E9;
+    background: #1977E9;
     color: #FFF;
     border-radius: 15px;
-}
-.card-Work-ul a{
-    color: #0a0a0a;
-    opacity: 0.5;
-text-align: center;
-font-family: Yekan;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-align: center;
 
 }
+
+.card-Work-ul a {
+    color: #0a0a0a;
+    opacity: 0.5;
+    text-align: center;
+    font-family: Yekan;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
 .Prepared {
     height: 18vh;
     width: 18vh;
+    background: url(images/enamad.png)no-repeat center top;
     margin: 0 auto;
     margin-top: 10px;
 }
@@ -120,18 +112,111 @@ text-align: center;
     right: 7px;
     font-size: 13px;
 }
+.slide {
+    min-height: 100vh;
+    flex-shrink: 0;
+}
+.slide-1 , .slide-2 {
+padding: 50px;
+display: flex;
+flex-direction: row;
+align-items: center;
 
-/* contact us */
+}
 
-.container-card-contactUs {
-    background: url(src/APIC.png) no-repeat center  #D9D9D9;
+.slide-text{
+min-height: 30vh;
+min-width: 30vh;
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 50px;
+}
+
+.slider {
+    scroll-behavior: smooth;
+
+}
+
+.slider>div:target {
+transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: scale(0.8);
+}
+
+.slider {
     width: 80%;
-    height: 450px;
-    margin: 0 auto;
-    padding: 50px;
-    position: relative;
-    top: 40px;
-    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: space-between;
+    overflow: hidden;
+    -webkit-scroll-snap-points-x: repeat(100%);
+    scroll-snap-type: mandatory;
+    -webkit-overflow-scrolling: touch;
+}
 
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+@media only screen and (max-width:1440px){
+    
+    .slide-text{
+        min-height: 10vh;
+        min-width: 20vh;
+            color: #000;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 25px;
+            padding: 5px;
+        }
+}
+@media only screen and (max-width:1251px){
+    .slide-1 , .slide-2 {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        
+}
+@media only screen and (max-width:1040px){
+    .slide-text{
+        min-height: 30vh;
+        min-width: 30vh;
+            color: #000;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 30px;
+            padding: 25px;
+        }
+    .card-Work-ul{
+        width: 75%;
+        list-style: none;
+        z-index: 999999;
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 15px;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+@media only screen and (max-width:633px){
+    .container-ul{
+        background: url(src/APIC.png)no-repeat left;
+        background-size: 10vh;
+        margin-left: 10px;  
+    }
+    li {
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width:377px){
+    li {
+        padding: 10px;
+        font-size: 10px;
+    }
 }
